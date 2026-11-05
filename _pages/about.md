@@ -92,39 +92,23 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 <div style="clear: both;"></div>
 
-<style>
-  .news-box {
-    margin-top: 3.5rem;
-    padding: 1.5rem 1.75rem 0.75rem;
-    border-radius: 0.4rem;
-    background-color: color-mix(in srgb, var(--global-theme-color) 6%, var(--global-bg-color));
-  }
-  .news-box .table,
-  .news-box .table th,
-  .news-box .table td {
-    background-color: transparent;
-  }
-</style>
+<div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
+  <h2 class="mb-0" style="font-weight: 700;">
+    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
+  </h2>
+</div>
 
-<div class="news-box">
-  <div class="section-heading" style="padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
-    <h2 class="mb-0" style="font-weight: 700;">
-      <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
-    </h2>
-  </div>
-
-  <div class="news">
-    <table class="table table-sm table-borderless">
-      {% for post in site.posts limit: 3 %}
-        <tr>
-          <th scope="row" style="width: 20%">{{ post.date | date: '%b %Y' }}</th>
-          <td>{{ post.title }}</td>
-        </tr>
-      {% else %}
-        <tr><td>No news so far...</td></tr>
-      {% endfor %}
-    </table>
-  </div>
+<div class="news">
+  <table class="table table-sm table-borderless">
+    {% for post in site.posts limit: 3 %}
+      <tr>
+        <th scope="row" style="width: 20%">{{ post.date | date: '%b %Y' }}</th>
+        <td>{{ post.title }}</td>
+      </tr>
+    {% else %}
+      <tr><td>No news so far...</td></tr>
+    {% endfor %}
+  </table>
 </div>
 
 <div
