@@ -4,22 +4,73 @@
   }
 </style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://jungjunha.github.io/blog/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
     initTheme();
-  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">You</span> R. Name </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">news <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <style>
-  .post-list li.post-year-heading {
-    padding-top: 0;
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">You</span> R. Name </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">news <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <style>
+  .news-list {
+    margin: 0 0 40px;
+    padding: 0;
+    list-style: none;
+  }
+  .news-list li {
+    list-style: none;
+  }
+  .news-list .news-year {
     padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--global-divider-color);
   }
-  .post-list li.post-year-heading h2 {
+  .news-list .news-year h2 {
     margin: 0;
+    font-weight: 700;
   }
-  .post-list li.post-year-heading:not(:first-child) {
+  .news-list .news-year:not(:first-child) {
     margin-top: 3.5rem;
   }
-  .post-list li:has(+ li.post-year-heading),
-  .post-list li:last-child {
+  .news-list .news-item {
+    display: flex;
+    gap: 1.75rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+    scroll-margin-top: 4rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .news-list .news-item:has(+ .news-year),
+  .news-list .news-item:last-child {
     border-bottom: none;
   }
-</style> <ul class="post-list"> <li class="post-year-heading"><h2>2026</h2></li> <li> <h3> <a class="post-title" href="/blog/2026/marimo/">a post with marimo snippets</a> </h3> <p>running Python in the browser with marimo</p> <p class="post-meta"> 2 min read   ·   April 28, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/code"> <i class="fa-solid fa-hashtag fa-sm"></i> code</a>   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </li> <li> <h3> <a class="post-title" href="/blog/2026/plotly/">a post with plotly.js</a> </h3> <p>this is what included plotly.js code could look like</p> <p class="post-meta"> 2 min read   ·   March 26, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   <a href="/blog/tag/charts"> <i class="fa-solid fa-hashtag fa-sm"></i> charts</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </li> <li> <div class="row"> <div class="col-sm-9"> <h3> <a class="post-title" href="/blog/2026/photo-gallery/">a post with image galleries</a> </h3> <p>this is what included image galleries could look like</p> <p class="post-meta"> 2 min read   ·   February 04, 2026 </p> <p class="post-tags"> <a href="/blog/2026"> <i class="fa-solid fa-calendar fa-sm"></i> 2026 </a>   ·   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   <a href="/blog/tag/images"> <i class="fa-solid fa-hashtag fa-sm"></i> images</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </div> <div class="col-sm-3"> <img class="card-img" src="/assets/img/9.jpg" style="object-fit: cover; height: 90%" alt="image"> </div> </div> </li> <li class="post-year-heading"><h2>2025</h2></li> <li> <h3> <a class="post-title" href="/blog/2025/tabs/">a post with tabs</a> </h3> <p>this is what included tabs in a post could look like</p> <p class="post-meta"> 2 min read   ·   May 01, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   <a href="/blog/tag/code"> <i class="fa-solid fa-hashtag fa-sm"></i> code</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </li> <li> <h3> <a class="post-title" href="/blog/2025/typograms/">a post with typograms</a> </h3> <p>this is what included typograms code could look like</p> <p class="post-meta"> 1 min read   ·   April 29, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   <a href="/blog/tag/diagrams"> <i class="fa-solid fa-hashtag fa-sm"></i> diagrams</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </li> <li> <h3> <a class="post-title" href="/blog/2025/post-citation/">a post that can be cited</a> </h3> <p>this is what a post that can be cited looks like</p> <p class="post-meta"> 1 min read   ·   April 28, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/formatting"> <i class="fa-solid fa-hashtag fa-sm"></i> formatting</a>   <a href="/blog/tag/citation"> <i class="fa-solid fa-hashtag fa-sm"></i> citation</a>   ·   <a href="/blog/category/sample-posts"> <i class="fa-solid fa-tag fa-sm"></i> sample-posts</a> </p> </li> <li class="post-year-heading"><h2>2024</h2></li> <li> <h3> <a class="post-title" href="https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/" target="_blank" rel="external nofollow noopener">Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra</a> <svg width="2rem" height="2rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </h3> <p>We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.</p> <p class="post-meta"> 7 min read   ·   May 14, 2024   ·   Google Blog </p> <p class="post-tags"> <a href="/blog/2024"> <i class="fa-solid fa-calendar fa-sm"></i> 2024 </a>   ·   <a href="/blog/tag/google"> <i class="fa-solid fa-hashtag fa-sm"></i> google</a>   ·   <a href="/blog/category/external-posts"> <i class="fa-solid fa-tag fa-sm"></i> external-posts</a> </p> </li> <li class="post-year-heading"><h2>2022</h2></li> <li> <h3> <a class="post-title" href="https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2" target="_blank" rel="external nofollow noopener">Displaying External Posts on Your al-folio Blog</a> <svg width="2rem" height="2rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"> <path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path> </svg> </h3> <p></p> <p class="post-meta"> 1 min read   ·   April 23, 2022   ·   medium.com </p> <p class="post-tags"> <a href="/blog/2022"> <i class="fa-solid fa-calendar fa-sm"></i> 2022 </a>   ·   <a href="/blog/tag/medium"> <i class="fa-solid fa-hashtag fa-sm"></i> medium</a>   ·   <a href="/blog/category/jekyll"> <i class="fa-solid fa-tag fa-sm"></i> jekyll</a>   <a href="/blog/category/jekyll-themes"> <i class="fa-solid fa-tag fa-sm"></i> jekyll-themes</a>   <a href="/blog/category/personal-blog"> <i class="fa-solid fa-tag fa-sm"></i> personal-blog</a>   <a href="/blog/category/blog"> <i class="fa-solid fa-tag fa-sm"></i> blog</a>   <a href="/blog/category/academic"> <i class="fa-solid fa-tag fa-sm"></i> academic</a> </p> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 You R. Name. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  .news-list .news-thumb {
+    flex: 0 0 220px;
+    width: 220px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.25rem;
+  }
+  .news-list .news-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .news-list .news-body h3 {
+    margin: 0;
+  }
+  .news-list .news-date {
+    margin: 0.25rem 0 0;
+    font-size: 0.875rem;
+    color: var(--global-text-color-light);
+  }
+  .news-list .news-content {
+    margin-top: 1rem;
+  }
+  .news-list .news-content > :last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 576px) {
+    .news-list .news-item {
+      gap: 1rem;
+    }
+    .news-list .news-thumb {
+      flex-basis: 110px;
+      width: 110px;
+    }
+  }
+</style> <div class="post"> <ul class="news-list"> <li class="news-year"><h2>2026</h2></li> <li class="news-item" id="marimo"> <img class="news-thumb" src="/assets/img/1.jpg" alt="a post with marimo snippets" loading="lazy"> <div class="news-body"> <h3>a post with marimo snippets</h3> <p class="news-date">April 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="plotly"> <img class="news-thumb" src="/assets/img/2.jpg" alt="a post with plotly.js" loading="lazy"> <div class="news-body"> <h3>a post with plotly.js</h3> <p class="news-date">March 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="photo-gallery"> <img class="news-thumb" src="/assets/img/9.jpg" alt="a post with image galleries" loading="lazy"> <div class="news-body"> <h3>a post with image galleries</h3> <p class="news-date">February 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-year"><h2>2025</h2></li> <li class="news-item" id="tabs"> <img class="news-thumb" src="/assets/img/5.jpg" alt="a post with tabs" loading="lazy"> <div class="news-body"> <h3>a post with tabs</h3> <p class="news-date">May 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="typograms"> <img class="news-thumb" src="/assets/img/6.jpg" alt="a post with typograms" loading="lazy"> <div class="news-body"> <h3>a post with typograms</h3> <p class="news-date">April 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="post-citation"> <img class="news-thumb" src="/assets/img/7.jpg" alt="a post that can be cited" loading="lazy"> <div class="news-body"> <h3>a post that can be cited</h3> <p class="news-date">April 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 You R. Name. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
@@ -53,7 +104,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "This is a description of the page. You can modify it in '_pages/cv.md'. You can also change or remove the top pdf download button.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/cv/";
@@ -62,7 +113,7 @@ ninja.data = [{
         
           title: "a post with marimo snippets",
         
-        description: "running Python in the browser with marimo",
+        description: "",
         section: "Posts",
         handler: () => {
           
@@ -73,7 +124,7 @@ ninja.data = [{
         
           title: "a post with plotly.js",
         
-        description: "this is what included plotly.js code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
@@ -84,7 +135,7 @@ ninja.data = [{
         
           title: "a post with image galleries",
         
-        description: "this is what included image galleries could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
@@ -95,7 +146,7 @@ ninja.data = [{
         
           title: "a post with tabs",
         
-        description: "this is what included tabs in a post could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
@@ -106,7 +157,7 @@ ninja.data = [{
         
           title: "a post with typograms",
         
-        description: "this is what included typograms code could look like",
+        description: "",
         section: "Posts",
         handler: () => {
           
@@ -117,33 +168,11 @@ ninja.data = [{
         
           title: "a post that can be cited",
         
-        description: "this is what a post that can be cited looks like",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2025/post-citation/";
-          
-        },
-      },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
-        
-          title: 'Google Gemini updates: Flash 1.5, Gemma 2 and Project Astra <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
-        description: "We’re sharing updates across our Gemini family of models and a glimpse of Project Astra, our vision for the future of AI assistants.",
-        section: "Posts",
-        handler: () => {
-          
-            window.open("https://blog.google/technology/ai/google-gemini-update-flash-ai-assistant-io-2024/", "_blank");
-          
-        },
-      },{id: "post-displaying-external-posts-on-your-al-folio-blog",
-        
-          title: 'Displaying External Posts on Your al-folio Blog <svg width="1.2rem" height="1.2rem" top=".5rem" viewbox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
-        
         description: "",
         section: "Posts",
         handler: () => {
           
-            window.open("https://medium.com/@al-folio/displaying-external-posts-on-your-al-folio-blog-b60a1d241a0a?source=rss-17feae71c3c4------2", "_blank");
+            window.location.href = "/blog/2025/post-citation/";
           
         },
       },{id: "books-the-godfather",
@@ -222,7 +251,7 @@ ninja.data = [{
         title: 'CV',
         section: 'Socials',
         handler: () => {
-          window.open("/assets/pdf/example_pdf.pdf", "_blank");
+          window.open("/assets/pdf/Junha_Jung_CV.pdf", "_blank");
         },
       },{
         id: 'social-email',
