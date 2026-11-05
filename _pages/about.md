@@ -93,6 +93,80 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <div style="clear: both;"></div>
 
 <style>
+  .news-box {
+    margin-top: 3.5rem;
+    padding: 1.5rem 1.75rem 0.75rem;
+    border-radius: 0.4rem;
+    background-color: color-mix(in srgb, var(--global-theme-color) 6%, var(--global-bg-color));
+  }
+  .news-box .table,
+  .news-box .table th,
+  .news-box .table td {
+    background-color: transparent;
+  }
+</style>
+
+<div class="news-box">
+  <div class="section-heading" style="padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
+    <h2 class="mb-0" style="font-weight: 700;">
+      <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
+    </h2>
+  </div>
+
+  <div class="news">
+    <table class="table table-sm table-borderless">
+      {% for post in site.posts limit: 3 %}
+        <tr>
+          <th scope="row" style="width: 20%">{{ post.date | date: '%b %Y' }}</th>
+          <td>{{ post.title }}</td>
+        </tr>
+      {% else %}
+        <tr><td>No news so far...</td></tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+<div
+  class="section-heading d-flex align-items-center flex-wrap"
+  style="gap: 1.5rem; margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;"
+>
+  <h2 class="mb-0" style="font-weight: 700;">
+    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">publications</a>
+  </h2>
+  <select
+    id="pub-filter"
+    aria-label="Filter publications"
+    style="padding: 0.2rem 0.5rem; border: 1px solid var(--global-divider-color); border-radius: 0.3rem; background-color: var(--global-bg-color); color: var(--global-text-color);"
+  >
+    <option value="all" selected>all</option>
+    <option value="selected">selected</option>
+    <option value="preprint">preprint</option>
+  </select>
+</div>
+
+<div class="publications" data-pub-group="all">
+  {% bibliography --group_by none %}
+</div>
+
+<div class="publications" data-pub-group="selected" style="display: none;">
+  {% bibliography --group_by none --query @*[selected=true]* %}
+</div>
+
+<div class="publications" data-pub-group="preprint" style="display: none;">
+  {% bibliography --group_by none --query @*[preprint=true]* %}
+</div>
+
+<script>
+  document.getElementById("pub-filter").addEventListener("change", function () {
+    var value = this.value;
+    document.querySelectorAll("[data-pub-group]").forEach(function (el) {
+      el.style.display = el.getAttribute("data-pub-group") === value ? "" : "none";
+    });
+  });
+</script>
+
+<style>
   .research-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -147,7 +221,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
   }
 </style>
 
-<div class="section-heading" style="margin-top: 1.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
+<div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
   <h2 class="mb-0" style="font-weight: 700;">research interests</h2>
 </div>
 
@@ -172,63 +246,3 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
     </div>
   {% endfor %}
 </div>
-
-<div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
-  <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
-  </h2>
-</div>
-
-<div class="news">
-  <table class="table table-sm table-borderless">
-    {% for post in site.posts limit: 3 %}
-      <tr>
-        <th scope="row" style="width: 20%">{{ post.date | date: '%b %Y' }}</th>
-        <td>
-          <a class="news-title" href="{{ '/blog/' | relative_url }}#{{ post.slug }}">{{ post.title }}</a>
-        </td>
-      </tr>
-    {% else %}
-      <tr><td>No news so far...</td></tr>
-    {% endfor %}
-  </table>
-</div>
-
-<div
-  class="section-heading d-flex align-items-center flex-wrap"
-  style="gap: 1.5rem; margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;"
->
-  <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">publications</a>
-  </h2>
-  <select
-    id="pub-filter"
-    aria-label="Filter publications"
-    style="padding: 0.2rem 0.5rem; border: 1px solid var(--global-divider-color); border-radius: 0.3rem; background-color: var(--global-bg-color); color: var(--global-text-color);"
-  >
-    <option value="all" selected>all</option>
-    <option value="selected">selected</option>
-    <option value="preprint">preprint</option>
-  </select>
-</div>
-
-<div class="publications" data-pub-group="all">
-  {% bibliography --group_by none %}
-</div>
-
-<div class="publications" data-pub-group="selected" style="display: none;">
-  {% bibliography --group_by none --query @*[selected=true]* %}
-</div>
-
-<div class="publications" data-pub-group="preprint" style="display: none;">
-  {% bibliography --group_by none --query @*[preprint=true]* %}
-</div>
-
-<script>
-  document.getElementById("pub-filter").addEventListener("change", function () {
-    var value = this.value;
-    document.querySelectorAll("[data-pub-group]").forEach(function (el) {
-      el.style.display = el.getAttribute("data-pub-group") === value ? "" : "none";
-    });
-  });
-</script>
