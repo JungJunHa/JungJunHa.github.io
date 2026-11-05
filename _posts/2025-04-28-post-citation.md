@@ -2,10 +2,7 @@
 layout: post
 title: a post that can be cited
 date: 2025-04-28 15:06:00
-description: this is what a post that can be cited looks like
-tags: formatting citation
-categories: sample-posts
-citation: true
+thumbnail: assets/img/7.jpg
 ---
 
-This is an example post that can be cited. The content of the post ends here, while the citation information is automatically provided below. The only thing needed is for you to set the `citation` key in the front matter to `true`.
+Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.

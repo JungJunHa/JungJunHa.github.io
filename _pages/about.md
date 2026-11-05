@@ -16,7 +16,7 @@ profile:
       <a href="mailto:you@example.com" title="email"><i class="fa-solid fa-envelope"></i></a>
       <a href="https://www.linkedin.com/in/your-linkedin-id" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
       <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-      <a href="assets/pdf/example_pdf.pdf" title="CV" target="_blank" rel="noopener noreferrer"><i class="ai ai-cv"></i></a>
+      <a href="assets/pdf/Junha_Jung_CV.pdf" title="CV" target="_blank" rel="noopener noreferrer"><i class="ai ai-cv"></i></a>
     </div>
 
 research_interests:
@@ -42,7 +42,7 @@ selected_papers: false # publications (selected / preprint) are rendered in the 
 social: false # social icons are shown under the profile picture instead (see profile.more_info)
 
 announcements:
-  enabled: false # news is rendered in the page body below (limit/scrollable still apply)
+  enabled: false # unused: the "news" section below lists the 3 latest posts from the news (/blog/) page
   scrollable: true # adds a vertical scroll bar if there are more than 3 news items
   limit: 5 # leave blank to include all the news in the `_news` folder
 
@@ -116,7 +116,7 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 </style>
 
 <div class="section-heading" style="margin-top: 1.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
-  <h2 class="mb-0">research interests</h2>
+  <h2 class="mb-0" style="font-weight: 700;">research interests</h2>
 </div>
 
 <div class="research-grid">
@@ -142,18 +142,31 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 </div>
 
 <div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
-  <h2 class="mb-0">
-    <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+  <h2 class="mb-0" style="font-weight: 700;">
+    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
   </h2>
 </div>
 
-{% include news.liquid limit=true %}
+<div class="news">
+  <table class="table table-sm table-borderless">
+    {% for post in site.posts limit: 3 %}
+      <tr>
+        <th scope="row" style="width: 20%">{{ post.date | date: '%b %Y' }}</th>
+        <td>
+          <a class="news-title" href="{{ '/blog/' | relative_url }}#{{ post.slug }}">{{ post.title }}</a>
+        </td>
+      </tr>
+    {% else %}
+      <tr><td>No news so far...</td></tr>
+    {% endfor %}
+  </table>
+</div>
 
 <div
   class="section-heading d-flex align-items-center flex-wrap"
   style="gap: 1.5rem; margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;"
 >
-  <h2 class="mb-0">
+  <h2 class="mb-0" style="font-weight: 700;">
     <a href="{{ '/publications/' | relative_url }}" style="color: inherit">publications</a>
   </h2>
   <select
