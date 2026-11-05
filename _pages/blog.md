@@ -8,32 +8,22 @@ nav_order: 2
 
 <div class="post">
 
-{% if site.display_tags and site.display_tags.size > 0 or site.display_categories and site.display_categories.size > 0 %}
-
-  <div class="tag-category-list">
-    <ul class="p-0 m-0">
-      {% for tag in site.display_tags %}
-        <li>
-          <i class="fa-solid fa-hashtag fa-sm"></i> <a href="{{ tag | slugify | prepend: '/blog/tag/' | relative_url }}">{{ tag }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-      {% if site.display_categories.size > 0 and site.display_tags.size > 0 %}
-        <p>&bull;</p>
-      {% endif %}
-      {% for category in site.display_categories %}
-        <li>
-          <i class="fa-solid fa-tag fa-sm"></i> <a href="{{ category | slugify | prepend: '/blog/category/' | relative_url }}">{{ category }}</a>
-        </li>
-        {% unless forloop.last %}
-          <p>&bull;</p>
-        {% endunless %}
-      {% endfor %}
-    </ul>
-  </div>
-  {% endif %}
+<style>
+  .post-list li.post-year-heading {
+    padding-top: 0;
+    padding-bottom: 0.4rem;
+  }
+  .post-list li.post-year-heading h2 {
+    margin: 0;
+  }
+  .post-list li.post-year-heading:not(:first-child) {
+    margin-top: 3.5rem;
+  }
+  .post-list li:has(+ li.post-year-heading),
+  .post-list li:last-child {
+    border-bottom: none;
+  }
+</style>
 
   <ul class="post-list">
 
@@ -56,7 +46,7 @@ nav_order: 2
 
     {% if year != current_year %}
       {% assign current_year = year %}
-      <h2 class="post-year">{{ year }}</h2>
+      <li class="post-year-heading"><h2>{{ year }}</h2></li>
     {% endif %}
 
     <li>
