@@ -2,22 +2,13 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
 
 profile:
-  align: left
+  align: right
   image: profile.jpeg
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
-    <div class="profile-socials" style="display: flex; gap: 0.9rem; font-size: 1.4rem; margin-top: 0.6rem;">
-      <a href="mailto:you@example.com" title="email"><i class="fa-solid fa-envelope"></i></a>
-      <a href="https://www.linkedin.com/in/your-linkedin-id" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ" title="Google Scholar" target="_blank" rel="noopener noreferrer"><i class="ai ai-google-scholar"></i></a>
-      <a href="assets/pdf/Junha_Jung_CV.pdf" title="CV" target="_blank" rel="noopener noreferrer"><i class="ai ai-cv"></i></a>
-    </div>
+    <p class="profile-affil" style="font-family: var(--global-font-family, inherit); font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Korea University &nbsp;&middot;&nbsp; <a href="https://dmis.korea.ac.kr/" target="_blank" rel="noopener noreferrer">DMIS Lab</a></p>
 
 research_interests:
   - title: Interest one
@@ -57,6 +48,47 @@ Write your biography here. Tell the world about yourself. Link to your favorite 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
 Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+
+<style>
+  .profile-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.5rem;
+    margin-top: 1.75rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .profile-links a {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+  .profile-links a:hover {
+    text-decoration: underline;
+  }
+  .profile-links a.cv-button {
+    padding: 0.6rem 1rem;
+    border-radius: 0.15rem;
+    background-color: var(--global-theme-color);
+    color: var(--global-bg-color);
+  }
+  .profile-links a.cv-button:hover {
+    text-decoration: none;
+    opacity: 0.9;
+  }
+  .profile-links i {
+    margin-left: 0.3rem;
+    font-size: 0.75em;
+  }
+</style>
+
+<div class="profile-links">
+  <a class="cv-button" href="{{ '/assets/pdf/Junha_Jung_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Curriculum vitae<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ" target="_blank" rel="noopener noreferrer">Scholar<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="https://github.com/JungJunHa" target="_blank" rel="noopener noreferrer">GitHub<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer">LinkedIn<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="mailto:you@example.com">Email<i class="fa-solid fa-arrow-up-right"></i></a>
+</div>
 
 <div style="clear: both;"></div>
 
