@@ -2,6 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
+description: Papers on multimodal reasoning, visual representation & grounding, medical MLLMs by Junha Jung
 nav: true
 nav_order: 1
 ---
@@ -11,6 +12,14 @@ nav_order: 1
 {% include pub_styles.liquid %}
 
 <style>
+  /* sub-page heading: capitalised and larger */
+  .post-header .post-title {
+    font-size: 3.25rem;
+    text-transform: capitalize;
+  }
+  .post-header .post-description {
+    font-size: 1rem;
+  }
   .pub-filter-bar {
     display: flex;
     align-items: center;

@@ -1,12 +1,21 @@
 ---
-layout: default
+layout: page
 permalink: /blog/
 title: news
+description: Latest research updates, publications, and academic milestones.
 nav: true
 nav_order: 2
 ---
 
 <style>
+  /* sub-page heading: capitalised and larger */
+  .post-header .post-title {
+    font-size: 3.25rem;
+    text-transform: capitalize;
+  }
+  .post-header .post-description {
+    font-size: 1rem;
+  }
   .news-list {
     margin: 0 0 40px;
     padding: 0;
@@ -88,8 +97,7 @@ nav_order: 2
   }
 </style>
 
-<div class="post">
-  <ul class="news-list">
+<ul class="news-list">
     {% for post in site.posts %}
       {% assign year = post.date | date: '%Y' %}
       {% if year != current_year %}
@@ -109,5 +117,4 @@ nav_order: 2
         </div>
       </li>
     {% endfor %}
-  </ul>
-</div>
+</ul>
