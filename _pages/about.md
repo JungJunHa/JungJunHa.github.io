@@ -133,7 +133,7 @@ I am interested in developing multimodal models that can reason reliably across 
     <option value="selected">published</option>
     <option value="preprint">preprint</option>
   </select>
-  <a href="{{ '/publications/' | relative_url }}" style="font-size: 0.85rem; font-weight: 700;">All publications<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
+  <a href="{{ '/publications/' | relative_url }}" style="margin-left: auto; font-size: 0.85rem; font-weight: 700;">All publications<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
 </div>
 
 <div class="publications" data-pub-group="all">
