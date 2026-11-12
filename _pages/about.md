@@ -130,7 +130,7 @@ I am interested in developing multimodal models that can reason reliably across 
     style="padding: 0.2rem 0.5rem; border: 1px solid var(--global-divider-color); border-radius: 0.3rem; background-color: var(--global-bg-color); color: var(--global-text-color);"
   >
     <option value="all" selected>all</option>
-    <option value="selected">selected</option>
+    <option value="selected">published</option>
     <option value="preprint">preprint</option>
   </select>
   <a href="{{ '/publications/' | relative_url }}" style="font-size: 0.85rem; font-weight: 700;">All publications<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
