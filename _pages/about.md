@@ -110,7 +110,7 @@ I am interested in developing multimodal models that can reason reliably across 
       <tr><td>No news so far...</td></tr>
     {% endfor %}
   </table>
-  <div style="text-align: right; font-size: 0.85rem; font-weight: 700;">
+  <div style="text-align: left; font-size: 0.85rem; font-weight: 700;">
     <a href="{{ '/blog/' | relative_url }}">Show all news<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
   </div>
 </div>
