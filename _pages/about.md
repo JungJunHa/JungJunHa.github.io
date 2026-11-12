@@ -46,7 +46,7 @@ latest_posts:
 
 Hello! I am an M.S. student in Computer Science at [Korea University](https://info.korea.edu/en_info/under/computer_intro.do), advised by [Prof. Jaewoo Kang](https://scholar.google.com/citations?user=RaBZafQAAAAJ) at the [DMIS Lab](https://dmis.korea.ac.kr/). Previously, I worked as a research assistant at Yonsei University and as an AI Consultant at Deloitte Consulting.
 
-My primary research interest lies in **Multimodal Reasoning**, with a focus on **Reinforcement Learning**, **Visual Representation Learning**, and **Visual Grounding**. My research spans **Medical MLLMs** and general-purpose multimodal models, with particular attention to improving reasoning capabilities and the use of visual information.
+My primary research interest lies in **Multimodal Reasoning**, focusing on **Reinforcement Learning**, **Visual Representation Learning**, and **Visual Grounding**. My research spans **Medical MLLMs** and general-purpose multimodal models, with particular attention to improving reasoning and the use of visual information.
 
 I am interested in developing multimodal models that can reason reliably across diverse visual tasks. Building on my research in medical visual question answering, I aim to explore broader challenges in multimodal reasoning, particularly how models learn to reason and how visual information is represented and utilized.
 
@@ -110,6 +110,9 @@ I am interested in developing multimodal models that can reason reliably across 
       <tr><td>No news so far...</td></tr>
     {% endfor %}
   </table>
+  <div style="text-align: right; font-size: 0.85rem; font-weight: 700;">
+    <a href="{{ '/blog/' | relative_url }}">Show all news<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
+  </div>
 </div>
 
 {% include pub_styles.liquid %}
@@ -179,6 +182,7 @@ I am interested in developing multimodal models that can reason reliably across 
   }
   .research-item h3 {
     font-size: 1.5rem;
+    font-weight: 700;
     margin: 1.25rem 0 0.75rem;
   }
   .research-item p {
