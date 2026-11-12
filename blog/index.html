@@ -37,11 +37,25 @@
     border-bottom: none;
   }
   .news-list .news-thumb {
-    flex: 0 0 220px;
-    width: 220px;
+    flex: 0 0 240px;
+    width: 240px;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    overflow: hidden;
+    border: 1px solid var(--global-divider-color);
     border-radius: 0.25rem;
+    background-color: #fff;
+  }
+  .news-list .news-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .news-list .news-thumb.fit-contain {
+    padding: 0.5rem;
+  }
+  .news-list .news-thumb.fit-contain img {
+    object-fit: contain;
   }
   .news-list .news-body {
     flex: 1;
@@ -66,11 +80,11 @@
       gap: 1rem;
     }
     .news-list .news-thumb {
-      flex-basis: 110px;
-      width: 110px;
+      flex-basis: 120px;
+      width: 120px;
     }
   }
-</style> <div class="post"> <ul class="news-list"> <li class="news-year"><h2>2026</h2></li> <li class="news-item" id="marimo"> <img class="news-thumb" src="/assets/img/1.jpg" alt="a post with marimo snippets" loading="lazy"> <div class="news-body"> <h3>a post with marimo snippets</h3> <p class="news-date">April 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="plotly"> <img class="news-thumb" src="/assets/img/2.jpg" alt="a post with plotly.js" loading="lazy"> <div class="news-body"> <h3>a post with plotly.js</h3> <p class="news-date">March 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="photo-gallery"> <img class="news-thumb" src="/assets/img/9.jpg" alt="a post with image galleries" loading="lazy"> <div class="news-body"> <h3>a post with image galleries</h3> <p class="news-date">February 2026</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-year"><h2>2025</h2></li> <li class="news-item" id="tabs"> <img class="news-thumb" src="/assets/img/5.jpg" alt="a post with tabs" loading="lazy"> <div class="news-body"> <h3>a post with tabs</h3> <p class="news-date">May 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="typograms"> <img class="news-thumb" src="/assets/img/6.jpg" alt="a post with typograms" loading="lazy"> <div class="news-body"> <h3>a post with typograms</h3> <p class="news-date">April 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> <li class="news-item" id="post-citation"> <img class="news-thumb" src="/assets/img/7.jpg" alt="a post that can be cited" loading="lazy"> <div class="news-body"> <h3>a post that can be cited</h3> <p class="news-date">April 2025</p> <div class="news-content"> <p>Write the news content here. One or two short paragraphs describing the update are enough — this text is shown directly on the news page under the title.</p> </div> </div> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Junha Jung. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+</style> <div class="post"> <ul class="news-list"> <li class="news-year"><h2>2026</h2></li> <li class="news-item" id="emnlp-2026-mrpo"> <div class="news-thumb"> <img src="/assets/news_img/2026_10_EMNLP.jpeg" alt="Our paper Breaking Failure Cascades was accepted to EMNLP 2026 Main! 🎉" loading="lazy"> </div> <div class="news-body"> <h3>Our paper Breaking Failure Cascades was accepted to EMNLP 2026 Main! 🎉</h3> <p class="news-date">October 2026</p> <div class="news-content"> <p>Our paper Breaking Failure Cascades was accepted to EMNLP 2026 Main, introducing step-aware reinforcement learning to improve medical multimodal reasoning.</p> </div> </div> </li> <li class="news-item" id="preprint-cvrr"> <div class="news-thumb fit-contain"> <img src="/assets/news_img/2026_09_cvrr.png" alt="New preprint! Reason Through the Latent! is now available on arXiv!" loading="lazy"> </div> <div class="news-body"> <h3>New preprint! Reason Through the Latent! is now available on arXiv!</h3> <p class="news-date">September 2026</p> <div class="news-content"> <p>Released Reason Through the Latent!, exploring how to make latent visual reasoning essential for multimodal predictions.</p> </div> </div> </li> <li class="news-item" id="acl-2026-clag"> <div class="news-thumb"> <img src="/assets/news_img/2026_07_ACL.png" alt="We presented CLAG at ACL 2026 Findings in San Diego, USA! 🎉" loading="lazy"> </div> <div class="news-body"> <h3>We presented CLAG at ACL 2026 Findings in San Diego, USA! 🎉</h3> <p class="news-date">July 2026</p> <div class="news-content"> <p>Presented CLAG: Adaptive Memory Organization via Agent-Driven Clustering for Small Language Model Agents at ACL 2026 Findings in San Diego, USA.</p> </div> </div> </li> <li class="news-item" id="preprint-samer"> <div class="news-thumb fit-contain"> <img src="/assets/news_img/2026_07_samer.png" alt="New preprint! Do All Visual Tokens Matter Equally? is now available on arXiv!" loading="lazy"> </div> <div class="news-body"> <h3>New preprint! Do All Visual Tokens Matter Equally? is now available on arXiv!</h3> <p class="news-date">July 2026</p> <div class="news-content"> <p>Released Do All Visual Tokens Matter Equally?, introducing object-aware token merging to preserve fine-grained visual evidence in vision-language retrieval.</p> </div> </div> </li> </ul> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Junha Jung. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
   window.alFolio = {
     compatBootstrap: false
   };
