@@ -43,11 +43,11 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hello! I am an M.S. student in Computer Science at [Korea University](https://info.korea.edu/en_info/under/computer_intro.do), advised by [Prof. Jaewoo Kang](https://scholar.google.com/citations?user=RaBZafQAAAAJ) at the [DMIS Lab (Data Mining and Information Systems Lab)](https://dmis.korea.ac.kr/). Previously, I worked as a research assistant at Yonsei University and as an AI Consultant at Deloitte Consulting.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+My primary research interest lies in **Multimodal Reasoning**, with a focus on **Reinforcement Learning**, **Visual Representation Learning**, and **Visual Grounding**. My research spans both **Medical MLLMs** and general-purpose multimodal models, with particular attention to improving reasoning capabilities and the effective use of visual information.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I am interested in developing multimodal models that can reason reliably across diverse visual tasks. Building on my research in medical visual question answering, I aim to explore broader challenges in multimodal reasoning, particularly how models learn to reason and how visual information is represented and utilized.
 
 <style>
   .profile-links {
@@ -84,10 +84,10 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 
 <div class="profile-links">
   <a class="cv-button" href="{{ '/assets/pdf/Junha_Jung_CV.pdf' | relative_url }}" target="_blank" rel="noopener noreferrer">Curriculum vitae<i class="fa-solid fa-arrow-up-right"></i></a>
-  <a href="https://scholar.google.com/citations?user=qc6CJjYAAAAJ" target="_blank" rel="noopener noreferrer">Scholar<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="https://scholar.google.com/citations?user=ieNiHkUAAAAJ" target="_blank" rel="noopener noreferrer">Scholar<i class="fa-solid fa-arrow-up-right"></i></a>
   <a href="https://github.com/JungJunHa" target="_blank" rel="noopener noreferrer">GitHub<i class="fa-solid fa-arrow-up-right"></i></a>
-  <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank" rel="noopener noreferrer">LinkedIn<i class="fa-solid fa-arrow-up-right"></i></a>
-  <a href="mailto:you@example.com">Email<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="https://www.linkedin.com/in/junha-jung-345961146/" target="_blank" rel="noopener noreferrer">LinkedIn<i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="mailto:goodjungjun@korea.ac.kr">Email<i class="fa-solid fa-arrow-up-right"></i></a>
 </div>
 
 <div style="clear: both;"></div>
@@ -110,6 +110,8 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
     {% endfor %}
   </table>
 </div>
+
+{% include pub_styles.liquid %}
 
 <div
   class="section-heading d-flex align-items-center flex-wrap"
@@ -140,6 +142,8 @@ Link to your social media connections, too. This theme is set up to use [Font Aw
 <div class="publications" data-pub-group="preprint" style="display: none;">
   {% bibliography --group_by none --query @*[preprint=true]* %}
 </div>
+
+<p class="equal-contrib-note">* Equal contribution.</p>
 
 <script>
   document.getElementById("pub-filter").addEventListener("change", function () {

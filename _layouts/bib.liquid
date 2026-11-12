@@ -1,0 +1,68 @@
+---
+---
+{%- comment -%}
+  Local override of al_folio_core's _layouts/bib.liquid (site-specific publication card).
+  Card: venue chip -> title -> authors (site owner in bold) -> optional summary -> links.
+  Fields read from _bibliography/papers.bib:
+    venue_label  chip text, e.g. "EMNLP 2026", "ACL 2026 Findings", "Preprint 2026"
+    summary      optional one-line description
+    paper, project, code, model   optional URLs (rendered as "Paper ↗", "Project ↗", "Code ↗", "Hugging Face ↗")
+    paper_note   optional text shown when there is no paper link yet (e.g. "Coming soon")
+    preview      optional figure path shown on the left (e.g. assets/paper_img/mrpo.png)
+  Styles live in _includes/pub_styles.liquid.
+{%- endcomment -%}
+<div class="pub-card" id="{{ entry.key }}">
+  <div class="pub-figure">
+    {% if entry.preview %}
+      <img src="{{ entry.preview | relative_url }}" alt="{{ entry.title | strip_html | escape }}" loading="lazy">
+    {% else %}
+      <span class="pub-figure-empty">Figure coming soon</span>
+    {% endif %}
+  </div>
+
+  <div class="pub-body">
+  <div class="pub-chip">{{ entry.venue_label | default: entry.abbr }}</div>
+
+  <div class="pub-title">{{ entry.title }}</div>
+
+  <div class="pub-authors">
+    {%- for author in entry.author_array -%}
+      {%- assign author_last_name = author.last | regex_replace: '[*∗†‡§¶‖&^]', '' -%}
+      {%- assign author_last_html = author.last | regex_replace: '([*∗†‡§¶‖&^]+)', '<sup>\1</sup>' -%}
+      {%- assign author_is_self = false -%}
+      {%- if site.scholar.last_name contains author_last_name and site.scholar.first_name contains author.first -%}
+        {%- assign author_is_self = true -%}
+      {%- endif -%}
+      {%- unless forloop.first -%}, {% endunless -%}
+      {%- if author_is_self -%}
+        <strong>{{ author.first }} {{ author_last_html }}</strong>
+      {%- else -%}
+        {{ author.first }} {{ author_last_html }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+
+  {% if entry.summary %}
+    <div class="pub-summary">{{ entry.summary }}</div>
+  {% endif %}
+
+  {% if entry.paper or entry.project or entry.code or entry.model or entry.paper_note %}
+    <div class="pub-links">
+      {% if entry.paper %}
+        <a href="{{ entry.paper }}" target="_blank" rel="noopener noreferrer">Paper<i class="fa-solid fa-arrow-up-right"></i></a>
+      {% elsif entry.paper_note %}
+        <span class="pub-note">{{ entry.paper_note }}</span>
+      {% endif %}
+      {% if entry.project %}
+        <a href="{{ entry.project }}" target="_blank" rel="noopener noreferrer">Project<i class="fa-solid fa-arrow-up-right"></i></a>
+      {% endif %}
+      {% if entry.code %}
+        <a href="{{ entry.code }}" target="_blank" rel="noopener noreferrer">Code<i class="fa-solid fa-arrow-up-right"></i></a>
+      {% endif %}
+      {% if entry.model %}
+        <a href="{{ entry.model }}" target="_blank" rel="noopener noreferrer">Hugging Face<i class="fa-solid fa-arrow-up-right"></i></a>
+      {% endif %}
+    </div>
+  {% endif %}
+  </div>
+</div>
