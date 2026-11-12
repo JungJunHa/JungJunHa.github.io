@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /blog/
-title: news
+title: News
 description: Latest research updates, publications, and academic milestones.
 nav: true
 nav_order: 2

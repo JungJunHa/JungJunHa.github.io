@@ -1,8 +1,8 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
-description: Papers on multimodal reasoning, visual representation & grounding, medical MLLMs by Junha Jung
+title: Publications
+description: Papers on Multimodal Reasoning, Visual Representation & Grounding, Medical MLLMs by Junha Jung
 nav: true
 nav_order: 1
 ---
