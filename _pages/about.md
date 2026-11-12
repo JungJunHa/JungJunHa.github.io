@@ -95,7 +95,7 @@ I am interested in developing multimodal models that can reason reliably across 
 
 <div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
   <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">News</a>
+    News
   </h2>
 </div>
 
@@ -122,7 +122,7 @@ I am interested in developing multimodal models that can reason reliably across 
   style="gap: 1.5rem; margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;"
 >
   <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
+    Publications
   </h2>
   <select
     id="pub-filter"
@@ -133,18 +133,19 @@ I am interested in developing multimodal models that can reason reliably across 
     <option value="selected">selected</option>
     <option value="preprint">preprint</option>
   </select>
+  <a href="{{ '/publications/' | relative_url }}" style="font-size: 0.85rem; font-weight: 700;">All publications<i class="fa-solid fa-arrow-right" style="margin-left: 0.35rem; font-size: 0.75em;"></i></a>
 </div>
 
 <div class="publications" data-pub-group="all">
-  {% bibliography --group_by none %}
+  {% bibliography --group_by none --max 10 %}
 </div>
 
 <div class="publications" data-pub-group="selected" style="display: none;">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+  {% bibliography --group_by none --max 10 --query @*[selected=true]* %}
 </div>
 
 <div class="publications" data-pub-group="preprint" style="display: none;">
-  {% bibliography --group_by none --query @*[preprint=true]* %}
+  {% bibliography --group_by none --max 10 --query @*[preprint=true]* %}
 </div>
 
 <p class="equal-contrib-note">* Equal contribution.</p>
