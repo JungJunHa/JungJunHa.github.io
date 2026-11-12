@@ -11,23 +11,24 @@ profile:
     <p class="profile-affil" style="font-family: var(--global-font-family, inherit); font-size: 0.85rem; font-weight: 600; margin-top: 0.5rem;">Korea University &nbsp;&middot;&nbsp; <a href="https://dmis.korea.ac.kr/" target="_blank" rel="noopener noreferrer">DMIS Lab</a></p>
 
 research_interests:
-  - title: Interest one
-    description: A one- or two-sentence question that describes this research direction.
+  - title: Multimodal Reasoning
+    description: How can we improve multimodal reasoning through better learning and reasoning processes?
     links:
-      - name: Project A
-        url: "#"
-      - name: Project B
-        url: "#"
-  - title: Interest two
-    description: A one- or two-sentence question that describes this research direction.
+      - name: MRPO
+        url: https://aclanthology.org/2026.emnlp-main.1950/
+  - title: Visual Representation & Grounding
+    description: How can models preserve and utilize visual evidence for grounded reasoning?
     links:
-      - name: Project C
-        url: https://example.com
-  - title: Interest three
-    description: A one- or two-sentence question that describes this research direction.
+      - name: SaMer
+        url: https://arxiv.org/abs/2607.04605
+      - name: CVRR
+        url: https://arxiv.org/abs/2609.06746
+  - title: Medical MLLMs
+    description: How can we improve the reliability of medical MLLMs through better reasoning and data?
     links:
-      - name: Project D
-        url: https://example.com
+      - name: MRPO
+        url: https://aclanthology.org/2026.emnlp-main.1950/
+      - name: MedQual (Coming Soon) # no url yet -> shown as plain text
 
 selected_papers: false # publications (selected / preprint) are rendered in the page body below
 social: false # social icons are shown under the profile picture instead (see profile.more_info)
@@ -43,9 +44,9 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I am an M.S. student in Computer Science at [Korea University](https://info.korea.edu/en_info/under/computer_intro.do), advised by [Prof. Jaewoo Kang](https://scholar.google.com/citations?user=RaBZafQAAAAJ) at the [DMIS Lab (Data Mining and Information Systems Lab)](https://dmis.korea.ac.kr/). Previously, I worked as a research assistant at Yonsei University and as an AI Consultant at Deloitte Consulting.
+Hello! I am an M.S. student in Computer Science at [Korea University](https://info.korea.edu/en_info/under/computer_intro.do), advised by [Prof. Jaewoo Kang](https://scholar.google.com/citations?user=RaBZafQAAAAJ) at the [DMIS Lab](https://dmis.korea.ac.kr/). Previously, I worked as a research assistant at Yonsei University and as an AI Consultant at Deloitte Consulting.
 
-My primary research interest lies in **Multimodal Reasoning**, with a focus on **Reinforcement Learning**, **Visual Representation Learning**, and **Visual Grounding**. My research spans both **Medical MLLMs** and general-purpose multimodal models, with particular attention to improving reasoning capabilities and the effective use of visual information.
+My primary research interest lies in **Multimodal Reasoning**, with a focus on **Reinforcement Learning**, **Visual Representation Learning**, and **Visual Grounding**. My research spans **Medical MLLMs** and general-purpose multimodal models, with particular attention to improving reasoning capabilities and the use of visual information.
 
 I am interested in developing multimodal models that can reason reliably across diverse visual tasks. Building on my research in medical visual question answering, I aim to explore broader challenges in multimodal reasoning, particularly how models learn to reason and how visual information is represented and utilized.
 
@@ -94,7 +95,7 @@ I am interested in developing multimodal models that can reason reliably across 
 
 <div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
   <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">news</a>
+    <a href="{{ '/blog/' | relative_url }}" style="color: inherit">News</a>
   </h2>
 </div>
 
@@ -118,7 +119,7 @@ I am interested in developing multimodal models that can reason reliably across 
   style="gap: 1.5rem; margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;"
 >
   <h2 class="mb-0" style="font-weight: 700;">
-    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">publications</a>
+    <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Publications</a>
   </h2>
   <select
     id="pub-filter"
@@ -188,6 +189,10 @@ I am interested in developing multimodal models that can reason reliably across 
     font-size: 0.85rem;
     font-weight: 600;
   }
+  .research-pending {
+    color: var(--global-text-color-light);
+    font-weight: 500;
+  }
   .research-links .sep {
     margin: 0 0.5rem;
     color: var(--global-divider-color);
@@ -210,7 +215,7 @@ I am interested in developing multimodal models that can reason reliably across 
 </style>
 
 <div class="section-heading" style="margin-top: 3.5rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--global-divider-color); margin-bottom: 1rem;">
-  <h2 class="mb-0" style="font-weight: 700;">research interests</h2>
+  <h2 class="mb-0" style="font-weight: 700;">Research Interests</h2>
 </div>
 
 <div class="research-grid">
@@ -222,11 +227,15 @@ I am interested in developing multimodal models that can reason reliably across 
       {% if item.links %}
         <div class="research-links">
           {% for link in item.links %}
-            {% assign is_external = link.url | slice: 0, 4 %}
-            <a href="{{ link.url }}" {% if is_external == 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
-              {{- link.name -}}
-              {% if is_external == 'http' %}&nbsp;<i class="fa-solid fa-arrow-up-right fa-xs"></i>{% endif %}
-            </a>
+            {% if link.url %}
+              {% assign is_external = link.url | slice: 0, 4 %}
+              <a href="{{ link.url }}" {% if is_external == 'http' %}target="_blank" rel="noopener noreferrer"{% endif %}>
+                {{- link.name -}}
+                {% if is_external == 'http' %}&nbsp;<i class="fa-solid fa-arrow-up-right fa-xs"></i>{% endif %}
+              </a>
+            {% else %}
+              <span class="research-pending">{{ link.name }}</span>
+            {% endif %}
             {% unless forloop.last %}<span class="sep">/</span>{% endunless %}
           {% endfor %}
         </div>
