@@ -39,11 +39,25 @@ nav_order: 2
     border-bottom: none;
   }
   .news-list .news-thumb {
-    flex: 0 0 220px;
-    width: 220px;
+    flex: 0 0 240px;
+    width: 240px;
     aspect-ratio: 4 / 3;
-    object-fit: cover;
+    overflow: hidden;
+    border: 1px solid var(--global-divider-color);
     border-radius: 0.25rem;
+    background-color: #fff;
+  }
+  .news-list .news-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .news-list .news-thumb.fit-contain {
+    padding: 0.5rem;
+  }
+  .news-list .news-thumb.fit-contain img {
+    object-fit: contain;
   }
   .news-list .news-body {
     flex: 1;
@@ -68,8 +82,8 @@ nav_order: 2
       gap: 1rem;
     }
     .news-list .news-thumb {
-      flex-basis: 110px;
-      width: 110px;
+      flex-basis: 120px;
+      width: 120px;
     }
   }
 </style>
@@ -85,7 +99,9 @@ nav_order: 2
 
       {% assign thumb = post.thumbnail | default: 'assets/img/9.jpg' %}
       <li class="news-item" id="{{ post.slug }}">
-        <img class="news-thumb" src="{{ thumb | relative_url }}" alt="{{ post.title }}" loading="lazy">
+        <div class="news-thumb{% if post.thumbnail_fit == 'contain' %} fit-contain{% endif %}">
+          <img src="{{ thumb | relative_url }}" alt="{{ post.title | escape }}" loading="lazy">
+        </div>
         <div class="news-body">
           <h3>{{ post.title }}</h3>
           <p class="news-date">{{ post.date | date: '%B %Y' }}</p>
