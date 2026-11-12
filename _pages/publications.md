@@ -19,6 +19,7 @@ nav_order: 1
   }
   .post-header .post-description {
     font-size: 1rem;
+    color: var(--global-text-color-light);
   }
   .pub-filter-bar {
     display: flex;

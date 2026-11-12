@@ -15,6 +15,7 @@ nav_order: 2
   }
   .post-header .post-description {
     font-size: 1rem;
+    color: var(--global-text-color-light);
   }
   .news-list {
     margin: 0 0 40px;
